@@ -19,7 +19,7 @@ class BabySitterTests(unittest.TestCase):
 
 	def test_setting_sitter_time_constraints(self):
 		'''Verify if the initial sitter time contraints can be updated from the initial values'''
-		self.sitter.set_sittter_start_time(18)
+		self.sitter.set_sitter_start_time(18)
 		self.sitter.set_sitter_end_time(24)
 		self.sitter.set_initial_bed_time(22)
 		self.assertEqual(self.sitter.sitter_start_time(), 18)
