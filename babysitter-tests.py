@@ -41,7 +41,7 @@ class BabySitterTests(unittest.TestCase):
 
 	def test_calc_hours_till_bed_time(self):
 		'''Check if the hours till bedtime are calculated accurately'''
-		hours = self.sitter._bedTime - self.sitter._startTime
+		hours = self.sitter._endTime - self.sitter._startTime
 		self.assertEqual(self.sitter._calcHoursTillBedTime(), hours)
 
 	def test_calc_hours_bed_time_till_midnight(self):
@@ -76,8 +76,9 @@ class BabySitterTests(unittest.TestCase):
 
 	def test_total_wages_earned(self):
 		'''Check to see if the wage are calculated accurately according to the contraints'''
-		totalWages = 12 * (self.sitter._endTime - self.sitter._startTime) #according to the setUp method total wage will come to $48
-		self.assertEqual(self.sitter.total_wages_earned(), totalWages)
+		sitter = BabySitter(17, 21, 22)
+		totalWages = ((sitter._endTime - sitter._startTime)*12) #according to the setUp method total wage will come to $60
+		self.assertEqual(sitter.total_wages_earned(), totalWages)
 
 if __name__ == '__main__':
 	unittest.main()
