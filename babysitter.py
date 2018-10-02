@@ -3,10 +3,10 @@ from notavailableexception import NotAvailableException
 class BabySitter:
 
 	def __init__(self, startTime, endTime, bedTime):
-		self._verifyTimeRanges(startTime, endTime, bedTime)
 		self._sitterStartTime = 17
 		self._sitterEndTime = 4
 		self._initialBedTime = 21
+		self._verifyTimeRanges(startTime, endTime, bedTime)
 
 	def _verifyTimeRanges(self, startTime, endTime, bedTime):
 		'''Check to make sure that the input time meets the sitter's time constraints'''
