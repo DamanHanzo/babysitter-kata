@@ -52,7 +52,7 @@ class BabySitterTests(unittest.TestCase):
 		hours = backupsitter._endTime - backupsitter._bedTime
 		self.assertEqual(backupsitter._calcHoursBedTimeTillMidnight(), hours)
 
-	def test_calc_hours_bed_time_till_midnight(self):
+	def test_calc_hours_bed_time_till_end(self):
 		'''Check if the hours from midnight till end time are calculated accurately'''
 		hours = 0
 		self.assertEqual(self.sitter._calcHoursMidnightTillEnd(), hours)
