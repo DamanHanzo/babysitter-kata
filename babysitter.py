@@ -15,9 +15,9 @@ class BabySitter:
 		elif endTime < self._sitterStartTime and endTime > self._sitterEndTime:
 			raise NotAvailableException("I cannnot stay after 4:00 AM")
 		else:
-			self._startTime = startTime
-			self._endTime = endTime
-			self._bedTime = bedTime
+			self._startTime = self._adjustHour(startTime)
+			self._endTime = self._adjustHour(endTime)
+			self._bedTime = self._adjustHour(bedTime)
 
 	def _adjustHour(self, hour):
 		if hour >= 0 and hour <= 4:
