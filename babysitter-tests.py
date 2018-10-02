@@ -31,6 +31,7 @@ class BabySitterTests(unittest.TestCase):
 	def test_verify_entered_time_ranges(self):
 		'''Validate the entered hours for the babysitter'''
 		self.assertRaises(Exception, self.sitter._verifyTimeRanges, 17, 16, 21)
+		self.assertRaises(Exception, self.sitter._verifyTimeRanges, 17, 5, 21)
 
 if __name__ == '__main__':
 	unittest.main()
