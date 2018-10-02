@@ -6,6 +6,9 @@ class BabySitter:
 		self._sitterStartTime = 17
 		self._sitterEndTime = 4
 		self._initialBedTime = 21
+		self._hourlyWageTillBedTime = 12
+		self._hourlyWageBedTimeTillMidnight = 8
+		self._hourlyWageMidnightTillEnd = 16
 		self._verifyTimeRanges(startTime, endTime, bedTime)
 
 	def _verifyTimeRanges(self, startTime, endTime, bedTime):
@@ -53,6 +56,15 @@ class BabySitter:
 
 	def initial_bed_time(self):
 		return self._initialBedTime
+
+	def hourly_wage_till_bed_time(self):
+		return self._hourlyWageTillBedTime
+
+	def hourly_wage_bedtime_till_midnight(self):
+		return self._hourlyWageBedTimeTillMidnight
+
+	def hourly_wage_midnight_till_end(self):
+		return self._hourlyWageMidnightTillEnd
 
 	def set_sitter_start_time(self, startTime=None):
 		if startTime is not None:
