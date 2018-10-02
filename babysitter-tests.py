@@ -6,6 +6,8 @@ class BabySitterTests(unittest.TestCase):
 	def setUp(self):	
 		'''Setup the babysitter once so that it can't be utilized all throughout the test'''
 		self.sitter = BabySitter(17, 21, 22)
+		self.startTimeNotAvailableMsg = "I am not available before 5:00 PM, sorry"
+		self.endTimeNotAvailableMsg = "I cannnot stay after 4:00 AM"
 		
 	def test_if_babysitter_object_exists(self):
 		'''Test if the babysitter object exists'''
@@ -28,7 +30,7 @@ class BabySitterTests(unittest.TestCase):
 	
 	def test_verify_entered_time_ranges(self):
 		'''Validate the entered hours for the babysitter'''
-		self.assertIsNotNone(self.sitter._verifyTimeRanges())
-	
+		self.assertRaises(Exception, self.sitter._verifyTimeRanges(17, 16, 21))
+
 if __name__ == '__main__':
 	unittest.main()
