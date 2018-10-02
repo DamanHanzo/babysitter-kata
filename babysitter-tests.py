@@ -76,7 +76,7 @@ class BabySitterTests(unittest.TestCase):
 
 	def test_total_wages_earned(self):
 		'''Check to see if the wage are calculated accurately according to the contraints'''
-		totalWages = 12 * (self._endTime - self._startTime) #according to the setUp method total wage will come to $48
+		totalWages = 12 * (self.sitter._endTime - self.sitter._startTime) #according to the setUp method total wage will come to $48
 		self.assertEqual(self.sitter.total_wages_earned(), totalWages)
 
 if __name__ == '__main__':
