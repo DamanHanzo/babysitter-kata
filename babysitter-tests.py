@@ -64,6 +64,15 @@ class BabySitterTests(unittest.TestCase):
 		self.assertEqual(self.sitter.hourly_wage_till_bed_time(), 12)
 		self.assertEqual(self.sitter.hourly_wage_bedtime_till_midnight(), 8)
 		self.assertEqual(self.sitter.hourly_wage_midnight_till_end(), 16)
+	
+	def test_setting_wage_rate_constants(self):
+		'''Verify if the wage rate contants can be set externally'''
+		self.sitter.set_hourly_wage_till_bed_time(18)
+		self.sitter.set_hourly_wage_bedtime_till_midnight(24)
+		self.sitter.set_hourly_wage_midnight_till_end(22)
+		self.assertEqual(self.sitter.hourly_wage_till_bed_time(), 18)
+		self.assertEqual(self.sitter.hourly_wage_bedtime_till_midnight(), 24)
+		self.assertEqual(self.sitter.hourly_wage_midnight_till_end(), 22)
 
 if __name__ == '__main__':
 	unittest.main()
