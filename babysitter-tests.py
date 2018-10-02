@@ -12,9 +12,14 @@ class BabySitterTests(unittest.TestCase):
 		self.assertIsNotNone(self.sitter)
 
 	def test_time_constraint_constants(self):
+		'''Check to make sure that the supplied time constants are set correctly'''
 		self.assertEqual(self.sitter.sitter_start_time(), 17)
 		self.assertEqual(self.sitter.sitter_end_time(), 4)
 		self.assertEqual(self.sitter.initial_bed_time(), 21)
+
+	def test_verify_time_ranges(self):
+
+
 	
 if __name__ == '__main__':
 	unittest.main()
