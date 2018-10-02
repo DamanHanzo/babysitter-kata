@@ -1,3 +1,5 @@
+from notavailableexception import NotAvailableException
+
 class BabySitter:
 
 	def __init__(self, startTime, endTime, bedTime):
@@ -11,9 +13,9 @@ class BabySitter:
 	def _verifyTimeRanges(self, startTime, endTime, bedTime):
 		'''Check to make sure that the input time meets the sitter's time constraints'''
 		if startTime < self._sitterStartTime and startTime > self._sitterEndTime:
-			raise Exception("I am not available before 5:00 PM, sorry")
+			raise NotAvailableException("I am not available before 5:00 PM, sorry")
 		elif endTime < self._sitterStartTime and endTime > self._sitterEndTime:
-			raise Exception("I cannnot stay after 4:00 AM")
+			raise NotAvailableException("I cannnot stay after 4:00 AM")
 
 	def sitter_start_time(self):
 		return self._sitterStartTime
