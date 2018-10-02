@@ -57,7 +57,7 @@ class BabySitterTests(unittest.TestCase):
 		hours = 0
 		self.assertEqual(self.sitter._calcHoursMidnightTillEnd(), hours)
 		backupsitter = BabySitter(17, 4, 21)
-		hours = 24 - backupsitter._endTime
+		hours = backupsitter._endTime - 24
 		self.assertEqual(backupsitter._calcHoursMidnightTillEnd(), hours)
 
 if __name__ == '__main__':
