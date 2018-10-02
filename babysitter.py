@@ -20,16 +20,19 @@ class BabySitter:
 			self._bedTime = self._adjustHour(bedTime)
 
 	def _adjustHour(self, hour):
+		'''Adjust time to match 24 hour time format'''
 		if hour >= 0 and hour <= 4:
 			hour += 24
 		return hour
 
 	def _calcHoursTillBedTime(self):
+		'''Method to calculate hours from start time till bed time'''
 		if self._endTime < self._startTime:
 			return self._endTime - self._startTime
 		return self._bedTime - self._startTime
 
 	def _calcHoursBedTimeTillMidnight(self):
+		'''Method to calculate hours from bed time till midnight'''
 		if self._endTime < self._bedTime:
 			return 0
 		if self._endTime < 24:
@@ -37,6 +40,7 @@ class BabySitter:
 		return 24 - self._bedTime
 
 	def _calcHoursMidnightTillEnd(self):
+		'''Method to calculate hours from midnight till the end'''
 		if self._endTime <= 24:
 			return 0
 		return self._endTime - 24
