@@ -60,5 +60,10 @@ class BabySitterTests(unittest.TestCase):
 		hours = backupsitter._endTime - 24
 		self.assertEqual(backupsitter._calcHoursMidnightTillEnd(), hours)
 
+	def test_wage_rate_constants(self):
+		self.assertEqual(self.sitter._hourlyWageTillBedTime, 12)
+		self.assertEqual(self.sitter._hourlyWageBedTimeTillMidnight, 8)
+		self.assertEqual(self.sitter._hourlyWageMidnightTillEnd, 16)
+
 if __name__ == '__main__':
 	unittest.main()
