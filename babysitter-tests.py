@@ -1,5 +1,6 @@
 import unittest
 from babysitter import BabySitter
+from notavailableexception import NotAvailableException
 
 class BabySitterTests(unittest.TestCase):
 
