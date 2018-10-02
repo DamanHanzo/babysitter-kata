@@ -10,6 +10,11 @@ class BabySitterTests(unittest.TestCase):
 	def test_if_babysitter_object_exists(self):
 		'''Test if the babysitter object exists'''
 		self.assertIsNotNone(self.sitter)
+
+	def test_time_constraint_constants(self):
+		self.assertEqual(self.sitter.sitter_start_time(), 17)
+		self.assertEqual(self.sitter.sitter_end_time(), 4)
+		self.assertEqual(self.sitter.initial_bed_time(), 9)
 	
 if __name__ == '__main__':
 	unittest.main()
