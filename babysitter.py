@@ -29,6 +29,13 @@ class BabySitter:
 			return self._endTime - self._startTime
 		return self._bedTime - self._startTime
 
+	def _calcHoursBedTimeTillMidnight(self):
+		if self._endTime < self._bedTime:
+			return 0
+		if self._endTime < 24:
+			return self._endTime - self._bedTime
+		return 24 - self._bedTime
+
 	def sitter_start_time(self):
 		return self._sitterStartTime
 
