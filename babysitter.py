@@ -77,3 +77,15 @@ class BabySitter:
 	def set_initial_bed_time(self, bedTime=None):
 		if bedTime is not None:
 			self._initialBedTime = int(bedTime)
+
+	def set_hourly_wage_till_bed_time(self, wageRate=None):
+		if wageRate is not None:
+			self._hourlyWageTillBedTime = wageRate
+
+	def set_hourly_wage_bedtime_till_midnight(self, wageRate=None):
+		if wageRate is not None:
+			self._hourlyWageBedTimeTillMidnight = wageRate
+
+	def set_hourly_wage_midnight_till_end(self, wageRate=None):
+		if wageRate is not None:
+			self._hourlyWageMidnightTillEnd = wageRate
