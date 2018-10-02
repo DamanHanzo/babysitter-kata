@@ -11,15 +11,11 @@ class BabySitterTests(unittest.TestCase):
 		'''Test if the babysitter object exists'''
 		self.assertIsNotNone(self.sitter)
 
-	def test_time_constraint_constants(self):
+	def test_initial_time_constraint(self):
 		'''Check to make sure that the supplied time constants are set correctly'''
 		self.assertEqual(self.sitter.sitter_start_time(), 17)
 		self.assertEqual(self.sitter.sitter_end_time(), 4)
 		self.assertEqual(self.sitter.initial_bed_time(), 21)
-
-	def test_verify_time_ranges(self):
-
-
 	
 if __name__ == '__main__':
 	unittest.main()
