@@ -16,3 +16,15 @@ class BabySitter:
 
 	def initial_bed_time(self):
 		return self._initialBedTime
+
+	def set_sitter_start_time(self, startTime=None):
+		if startTime is not None:
+			self._sitterStartTime = int(startTime)
+
+	def set_sitter_end_time(self, endTime=None):
+		if endTime is not None:
+			self._sitterEndTime = int(endTime)
+
+	def set_initial_bed_time(self, bedTime=None):
+		if bedTime is not None:
+			self._initialBedTime = int(bedTime)
