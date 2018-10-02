@@ -34,5 +34,10 @@ class BabySitterTests(unittest.TestCase):
 		self.assertRaises(NotAvailableException, self.sitter._verifyTimeRanges, 17, 16, 21)
 		self.assertRaises(NotAvailableException, self.sitter._verifyTimeRanges, 17, 5, 21)
 
+	def test_adjust_hour(self):
+		'''Test to make sure that the time is adjusted to match 24 hour time format'''
+		self.assertEqual(self.sitter._adjustHour(2), 26)
+		self.assertEqual(self.sitter._adjustHour(13), 13)
+
 if __name__ == '__main__':
 	unittest.main()
