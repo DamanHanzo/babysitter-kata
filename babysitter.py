@@ -3,9 +3,7 @@ from notavailableexception import NotAvailableException
 class BabySitter:
 
 	def __init__(self, startTime, endTime, bedTime):
-		self._startTime = startTime
-		self._endTime = endTime
-		self._bedTime = bedTime
+		self._verifyTimeRanges(startTime, endTime, bedTime)
 		self._sitterStartTime = 17
 		self._sitterEndTime = 4
 		self._initialBedTime = 21
@@ -16,6 +14,10 @@ class BabySitter:
 			raise NotAvailableException("I am not available before 5:00 PM, sorry")
 		elif endTime < self._sitterStartTime and endTime > self._sitterEndTime:
 			raise NotAvailableException("I cannnot stay after 4:00 AM")
+		else:
+			self._startTime = startTime
+			self._endTime = endTime
+			self._bedTime = bedTime
 
 	def _adjustHour(self, hour):
 		if hour >= 0 and hour <= 4:
