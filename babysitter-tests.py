@@ -26,5 +26,9 @@ class BabySitterTests(unittest.TestCase):
 		self.assertEqual(self.sitter.sitter_end_time(), 24)
 		self.assertEqual(self.sitter.initial_bed_time(), 22)
 	
+	def test_verify_entered_time_ranges(self):
+		'''Validate the entered hours for the babysitter'''
+		self.assertIsNotNone(self.sitter._verifyTimeRanges())
+	
 if __name__ == '__main__':
 	unittest.main()
