@@ -30,7 +30,7 @@ class BabySitter:
 
 	def _calcHoursTillBedTime(self):
 		'''Method to calculate hours from start time till bed time'''
-		if self._endTime < self._startTime:
+		if self._endTime < self._bedTime:
 			return self._endTime - self._startTime
 		return self._bedTime - self._startTime
 
@@ -47,6 +47,12 @@ class BabySitter:
 		if self._endTime <= 24:
 			return 0
 		return self._endTime - 24
+
+	def total_wages_earned(self):
+		'''Evaluates and returns total earned wages'''
+		return int(((self._hourlyWageTillBedTime * self._calcHoursTillBedTime()) + 
+			(self._hourlyWageBedTimeTillMidnight * self._calcHoursBedTimeTillMidnight()) +
+			 (self._hourlyWageMidnightTillEnd * self._calcHoursMidnightTillEnd())))
 
 	def sitter_start_time(self):
 		return self._sitterStartTime
